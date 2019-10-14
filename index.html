@@ -1,0 +1,29 @@
+<?php
+include('include.php');
+?>
+<html>
+
+<head>
+    <script type="text/javascript" src="arjunane-date.js"></script>
+    <link rel="stylesheet" href="arjunane-date.css"></link>
+</head>
+
+<body>
+    <div style="margin:500px 0 0 0;width:100%;">
+        <input class="date" style="float:left" value="2018-30-06">
+        <input class="date" style="float:right" value="2018-01-20 12:09:20">
+    </div>
+    <script type="text/javascript">
+        kalender.dom('.date').ex({
+            days: {'Minggu':'Min','Senin':'Sen','Selasa':'Sel','Rabu':'Rab','Kamis':'Kam',"Jum'at":'Jum','Sabtu':'Sab'},
+            format: 'dd-mm-yyyy',
+            time: true,
+            color:{
+                'bg_header':'#000'
+            },
+            year_range: '1995:2018'
+        });
+    </script>
+</body>
+
+</html>
