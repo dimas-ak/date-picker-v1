@@ -13,11 +13,12 @@ How do it used?
                     "Jum'at":'Jum',
                     'Sabtu':'Sab'
                   },
-            format: 'dd-mm-yyyy',
+            format: 'yyyy-mm-ddd',
             time: true,
-            color:{
-                'bg_header':'#000'
-            },
-            year_range: '1995:2018'
+            year_range: '1995:2020'
         });
 ```
+
+[Documentation](https://dimas-ak.github.io/documentation/date-picker-v1/)
+
+[Find More](https://dimas-ak.github.io/)
