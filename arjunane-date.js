@@ -2,7 +2,7 @@
     
     var kalender = function() {
         var _d = 'days',
-            _m = 'month',
+            _m = 'months',
             _f = 'format',
             _t = 'time',
             _h = 'hour',
@@ -250,15 +250,17 @@
             el = e;
             var widthX          = window.innerWidth,
                 scrollY         = window.scrollY,
+                height          = window.innerHeight,
+                pos             = el.getBoundingClientRect(),
                 width_scroll    = 17,
-                calc_left       = el.offsetLeft + 300, 
-                calc_top        = el.offsetTop + 300,
-                left            = calc_left > widthX ? (el.offsetLeft - width_scroll) - (calc_left - widthX) : el.offsetLeft,
-                top             = calc_top  > scrollY ? (el.offsetTop - scrollY) - (calc_left - scrollY) : el.offsetLeft;
+                calc_left       = pos.left + 300, 
+                calc_top        = pos.top + 300,
+                left            = calc_left > widthX ? (pos.left - width_scroll) - (calc_left - widthX) : pos.left,
+                top             = calc_top > pos.top ? pos.top : pos.top + pos.height;
                 
             return {
-                left: el.offsetLeft,
-                top: el.offsetTop
+                left: left,
+                top: top
             }
         },
         addClass: function(elem, selector) {
@@ -498,8 +500,9 @@
                     width = elem.offsetWidth / 2;
                 dom.className = 'kalender arjunane-kalender';
                 dom.id = 'arjunane-kalender';
-                dom.style.left = (kalender.getOffset(elem).left) + 'px';
-                dom.style.top = (kalender.getOffset(elem).top + height) + 'px';
+                var offset = kalender.getOffset(elem);
+                dom.style.left = (offset.left) + 'px';
+                dom.style.top = (offset.top) + 'px';
                 dom.innerHTML = kalender.setElemTitle();
                 dom.innerHTML += kalender.setElemBody();
                 document.body.appendChild(dom);
