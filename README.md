@@ -19,6 +19,6 @@ How do it used?
         });
 ```
 
-[Documentation](https://dimas-ak.web.app/documentation/date-picker-v1/)
+[Documentation](https://dimas-ak.github.io/#/documentation/arjunane-date-picker-v1)
 
-[Find More](https://dimas-ak.web.app/)
+[Find More](https://dimas-ak.github.io/)
